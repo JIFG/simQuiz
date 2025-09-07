@@ -1,31 +1,29 @@
-/** @type {import('tailwindcss').Config} */
-const {Colors}= require('./src/constants/colors.ts')
+// tailwind.config.js
+const { Colors } = require("./src/constants/colors");
+
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./componentes/**/*.{js,ts,jsx,tsx}",
-    "./.presentation/**/*.{js,ts,jsx,tsx}"
-  ],
-  presets: [require("nativewind/preset")], // ESTA LÍNEA ES LA CLAVE
+  darkMode: "class",
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  presets: [require("nativewind/preset")],
   theme: {
     extend: {
-      // si quieres personalizar colores, fuentes, etc., lo haces aquí
       colors: {
-        'bg-default': Colors.background,
-        'surface': Colors.surface,
-        'primary': Colors.primary,
-        'secondary': Colors.secondary,
-        'text-high': Colors.text.highContrast,
-        'text-medium': Colors.text.mediumContrast,
-        'text-low': Colors.text.lowContrast,
-        'border-default': Colors.border,
-        'error': Colors.error,
+        // fondos
+        "light-background": Colors.light.background,
+        "dark-background":  Colors.dark.background,
+        // superficies (cards, modales…)
+        "light-surface":    Colors.light.surface,
+        "dark-surface":     Colors.dark.surface,
+        // primario
+        "light-primary":    Colors.light.primary,
+        "dark-primary":     Colors.dark.primary,
+        // texto
+        "light-text-high":   Colors.light.text.highContrast,
+        "dark-text-high":    Colors.dark.text.highContrast,
+        "light-text-medium": Colors.light.text.mediumContrast,
+        "dark-text-medium":  Colors.dark.text.mediumContrast,
+        // etc…
       },
-      fontFamily: {
-        'work-black': ['WorkSans-Black', 'sans-serif'],
-        'work-ligth': ['WorkSans-Light', 'sans-serif'],
-        'work-medium': ['WorkSans-Medium', 'sans-serif'],
-      }
     },
   },
   plugins: [],

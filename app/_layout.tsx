@@ -1,12 +1,16 @@
-import { Stack } from "expo-router";
-import "./global.css";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-const Layout = () => {
+import "../app/global.css";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Stack } from 'expo-router';
+import { QuizProvider } from '../src/context/QuizContext';
+
+export default function Layout() {
   return (
     <SafeAreaProvider>
-      <Stack screenOptions={{ headerShown: false }} />
+      <QuizProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+      </QuizProvider>
     </SafeAreaProvider>
   );
-};
+}
 
-export default Layout;
+
